@@ -1,9 +1,13 @@
 spring:
+  config:
+    activate:
+      on-profile: prod
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3308/todo_app?serverTimezone=UTC&characterEncoding=UTF-8
-    username: root
-    password: 1234
+    url: jdbc:mysql://dev-mysql.c5j325nh16fu.ap-northeast-2.rds.amazonaws.com/todo_app?serverTimezone=UTC&characterEncoding=UTF-8
+    username: admin
+    password: ${rds-pwd}
+
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
